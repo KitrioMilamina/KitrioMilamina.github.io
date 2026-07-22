@@ -1,505 +1,541 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Portfolio Moderne</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KITRIO Milamina | Portfolio</title>
+<meta name="description" content="Portfolio professionnel de KITRIO Milamina - Développeur Web, Designer Graphique, Créateur Multimédia">
 
-  <!-- Google Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<!-- Google Fonts : Poppins (titres) + Open Sans (texte) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      scroll-behavior:smooth;
-      font-family:'Poppins', sans-serif;
-    }
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    body{
-      background:#000;
-      color:#fff;
-    }
-
-    /* HEADER */
-
-    header{
-      width:100%;
-      position:fixed;
-      top:0;
-      left:0;
-      z-index:1000;
-      background:#000;
-      padding:20px 8%;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      border-bottom:1px solid rgba(255,255,255,0.05);
-    }
-
-    .logo{
-      font-size:30px;
-      font-weight:700;
-      color:#fff;
-    }
-    .logo img{
-   width: 50px;
-   height: auto;
-}
-
-    nav ul{
-      display:flex;
-      list-style:none;
-      gap:35px;
-    }
-
-    nav ul li a{
-      text-decoration:none;
-      color:#fff;
-      font-size:15px;
-      transition:0.3s;
-      position:relative;
-    }
-
-    nav ul li a:hover{
-      color:#f7b733;
-    }
-
-    nav ul li a::after{
-      content:'';
-      width:0;
-      height:2px;
-      background:#f7b733;
-      position:absolute;
-      left:0;
-      bottom:-8px;
-      transition:0.4s;
-    }
-
-    nav ul li a:hover::after{
-      width:100%;
-    }
-
-    /* HERO */
-
-    .hero{
-      min-height:100vh;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:120px 8%;
-      gap:40px;
-      height: 900px;
-    }
-
-    .hero-text{
-      max-width:550px;
-    }
-
-    .hero-text h4{
-      color:#f7b733;
-      letter-spacing:2px;
-      margin-bottom:15px;
-    }
-
-    .hero-text h1{
-      font-size:70px;
-      line-height:1.1;
-      margin-bottom:20px;
-    }
-
-    .hero-text span{
-      color:#f7b733;
-    }
-
-    .hero-text h3{
-      font-size:32px;
-      font-weight:400;
-      margin-bottom:35px;
-    }
-
-    .buttons{
-      display:flex;
-      gap:20px;
-    }
-
-    .btn{
-      padding:14px 30px;
-      border-radius:40px;
-      text-decoration:none;
-      font-weight:600;
-      transition:0.4s;
-    }
-
-    .btn-yellow{
-      background:#f7b733;
-      color:#000;
-    }
-
-    .btn-yellow:hover{
-      transform:translateY(-5px);
-    }
-
-    .btn-dark{
-      border:1px solid #555;
-      color:#fff;
-    }
-
-    .btn-dark:hover{
-      background:#f7b733;
-      color:#000;
-    }
-
-    .hero-image img{
-      width:500px;
-      max-width:100%;
-      animation:float 3s ease-in-out infinite;
-    }
-
-    @keyframes float{
-      0%{
-        transform:translateY(0);
-      }
-      50%{
-        transform:translateY(-15px);
-      }
-      100%{
-        transform:translateY(0);
-      }
-    }
-
-    /* SECTION TITLE */
-
-    .section-title{
-      text-align:center;
-      margin-bottom:70px;
-    }
-
-    .section-title h2{
-      font-size:60px;
-      position:relative;
-      display:inline-block;
-    }
-
-    .section-title span{
-      position:absolute;
-      top:20px;
-      left:50%;
-      transform:translateX(-50%);
-      font-size:90px;
-      color:rgba(255,255,255,0.05);
-      z-index:-1;
-    }
-
-    /* ABOUT */
-
-    .about{
-      padding:120px 8%;
-      display:flex;
-      align-items:center;
-      gap:70px;
-      flex-wrap:wrap;
-    }
-
-    .about img{
-      width:420px;
-      max-width:100%;
-    }
-
-    .about-text{
-      flex:1;
-    }
-
-    .about-text p{
-      color:#aaa;
-      line-height:1.8;
-      margin-bottom:30px;
-    }
-
-    .info{
-      margin-bottom:30px;
-    }
-
-    .info div{
-      margin-bottom:15px;
-    }
-
-    .info strong{
-      color:#f7b733;
-      width:140px;
-      display:inline-block;
-    }
-
-    /* SKILLS */
-
-    .skills{
-      padding:120px 8%;
-    }
-
-    .skills-container{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
-      gap:40px;
-    }
-
-    .skill{
-      margin-bottom:25px;
-    }
-
-    .skill-header{
-      display:flex;
-      justify-content:space-between;
-      margin-bottom:10px;
-    }
-
-    .progress{
-      width:100%;
-      height:10px;
-      background:#222;
-      border-radius:20px;
-      overflow:hidden;
-    }
-
-    .progress span{
-      display:block;
-      height:100%;
-      background:#f7b733;
-      width:0;
-      transition:2s;
-    }
-
-    /* FOOTER */
-
-    footer{
-      text-align:center;
-      padding:30px;
-      border-top:1px solid rgba(255,255,255,0.08);
-      color:#888;
-    }
-
-    /* RESPONSIVE */
-
-    @media(max-width:900px){
-
-      .hero{
-        flex-direction:column;
-        text-align:center;
-      }
-
-      .buttons{
-        justify-content:center;
-      }
-
-      .hero-text h1{
-        font-size:50px;
-      }
-
-      nav ul{
-        gap:15px;
-      }
-
-      .about{
-        flex-direction:column;
-        text-align:center;
-      }
-    }
-
-  </style>
+<!-- Feuille de style principale -->
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-  <!-- HEADER -->
+<!-- ============================================ -->
+<!-- PRÉCHARGEUR / LOADER                          -->
+<!-- ============================================ -->
+<div class="preloader" id="preloader">
+  <div class="preloader-content">
+    <span class="preloader-letter" style="--i:0">R</span>
+    <span class="preloader-letter" style="--i:1">M</span>
+    <span class="preloader-letter" style="--i:2">F</span>
+  </div>
+  <div class="preloader-bar"><span></span></div>
+</div>
 
-  <header>
-    <div class="logo"><img src="Logo blanc.png" alt=""></div>
+<!-- ============================================ -->
+<!-- BARRE DE PROGRESSION DE SCROLL                -->
+<!-- ============================================ -->
+<div class="scroll-progress" id="scrollProgress"></div>
 
-    <nav>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#">Projects</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="#">Contact</a></li>
+<!-- ============================================ -->
+<!-- HEADER / NAVBAR                               -->
+<!-- ============================================ -->
+<header class="header" id="header">
+  <div class="container header-container">
+
+    <a href="#accueil" class="logo">
+      <span class="logo-mark">KM</span>
+      <span class="logo-text">KITRIO Milamina</span>
+    </a>
+
+    <nav class="nav" id="nav">
+      <ul class="nav-list" id="navList">
+        <li><a href="#accueil" class="nav-link active" data-nav>Accueil</a></li>
+        <li><a href="#apropos" class="nav-link" data-nav>À propos</a></li>
+        <li><a href="#competences" class="nav-link" data-nav>Compétences</a></li>
+        <li><a href="#diplomes" class="nav-link" data-nav>Diplômes</a></li>
+        <li><a href="#formation" class="nav-link" data-nav>Formation</a></li>
+        <li><a href="#experiences" class="nav-link" data-nav>Expériences</a></li>
+        <li><a href="#projets" class="nav-link" data-nav>Projets</a></li>
+        <li><a href="#contact" class="nav-link" data-nav>Contact</a></li>
       </ul>
     </nav>
-  </header>
 
-  <!-- HERO -->
+    <button class="hamburger" id="hamburger" aria-label="Ouvrir le menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
 
-  <section class="hero" id="home">
+<!-- ============================================ -->
+<!-- HERO SECTION                                  -->
+<!-- ============================================ -->
+<section class="hero" id="accueil">
 
-    <div class="hero-text">
-      <h4>HELLO !</h4>
+  <!-- Formes géométriques animées en arrière-plan -->
+  <div class="hero-shapes">
+  <div class="shape-circle-photo">
+    <img src="pixelcut-export.png" alt="Photo de Rabearison Minohenintsoa Fitiavana">
+  </div>
+  <span class="shape shape-square"></span>
+  <span class="shape shape-ring"></span>
+  <span class="shape shape-triangle"></span>
+</div>
 
-      <h1>Je suis <span>KITRIO</span><br>Milamina</h1>
+  <div class="container hero-container">
 
-      <h3>Communication multimedia</h3>
-
-      <div class="buttons">
-        <a href="#" class="btn btn-yellow">Hire Me</a>
-        <a href="#" class="btn btn-dark">My Works</a>
+    <div class="hero-image" data-aos="fade-right">
+      <div class="hero-image-frame">
+        <img src="P94A8801.png" alt="Photo de profil de Rabearison Minohenintsoa Fitiavana">
+      </div>
+      <div class="hero-image-badge">
+        <img src="pixelcut-export.png" alt="Photo de Rabearison Minohenintsoa Fitiavana">
       </div>
     </div>
 
-    <div class="hero-image">
-       <img src="pixelcut-export.png" alt="">
-    </div>
-
-  </section>
-
-  <!-- ABOUT -->
-
-  <section class="about" id="about">
-
-    <img src="pixelcut-export.png" alt="">
-
-    <div class="about-text">
-
-      <div class="section-title">
-        <h2>About Me <span>ABOUT</span></h2>
+    <div class="hero-text" data-aos="fade-left">
+      <p class="hero-eyebrow">Bienvenue sur mon portfolio</p>
+      <h1 class="hero-name">KITRIO<br>Milamina</h1><br><h2> RABEARISON Minohenintsoa Fitiavana </h2>
+      <div class="hero-typewriter">
+        <span id="typewriter"></span><span class="cursor-blink">|</span>
       </div>
-
-      <p>
-        Développeur web moderne spécialisé dans la création de sites web
-        professionnels, rapides et responsives avec un design moderne.
+      <p class="hero-desc">
+        Passionné par la création d'expériences numériques élégantes, alliant
+        développement web, design graphique et communication digitale.
       </p>
-
-      <div class="info">
-        <div><strong>Nom :</strong> Shasika Shehan</div>
-        <div><strong>Email :</strong> contact@gmail.com</div>
-        <div><strong>Téléphone :</strong> +261 34 00 000 00</div>
-        <div><strong>Adresse :</strong> Madagascar</div>
+      <div class="hero-buttons">
+        <a href="CV Professionnel Simple pastel et féminin Beige et marron .pdf" class="btn btn-primary" download>
+          <i class="fa-solid fa-download"></i> Télécharger mon CV
+        </a>
+        <a href="#contact" class="btn btn-outline">
+          <i class="fa-solid fa-paper-plane"></i> Me contacter
+        </a>
       </div>
+    </div>
+  </div>
 
-      <a href="#" class="btn btn-yellow">Download CV</a>
+  <a href="#apropos" class="scroll-down" aria-label="Défiler vers le bas">
+    <span></span>
+  </a>
+</section>
 
+<!-- ============================================ -->
+<!-- À PROPOS                                      -->
+<!-- ============================================ -->
+<section class="section apropos" id="apropos">
+  <div class="container">
+
+    <div class="section-head" data-aos="fade-up">
+      <p class="section-eyebrow">Faites connaissance</p>
+      <h2 class="section-title">À propos de moi</h2>
     </div>
 
-  </section>
-
-  <!-- SKILLS -->
-
-  <section class="skills" id="skills">
-
-    <div class="section-title">
-      <h2>My Skills <span>SKILLS</span></h2>
-    </div>
-
-    <div class="skills-container">
-
-      <div>
-
-        <div class="skill">
-          <div class="skill-header">
-            <h4>HTML5</h4>
-            <h4>95%</h4>
-          </div>
-
-          <div class="progress">
-            <span data-width="95%"></span>
-          </div>
+    <div class="apropos-grid">
+      <div class="apropos-image" data-aos="fade-right">
+        <div class="apropos-image-frame">
+          <img src="P94A8773.jpg" alt="Photo de présentation">
         </div>
-
-        <div class="skill">
-          <div class="skill-header">
-            <h4>CSS3</h4>
-            <h4>90%</h4>
-          </div>
-
-          <div class="progress">
-            <span data-width="90%"></span>
-          </div>
-        </div>
-
-        <div class="skill">
-          <div class="skill-header">
-            <h4>JavaScript</h4>
-            <h4>85%</h4>
-          </div>
-
-          <div class="progress">
-            <span data-width="85%"></span>
-          </div>
-        </div>
-
       </div>
 
-      <div>
+      <div class="apropos-content" data-aos="fade-left">
+        <h3>Étudiant en Master Communication Multimédia</h3>
+        <p>
+          Je suis actuellement étudiant en Master Communication Multimédia à l'EMIT Fianarantsoa.
+          Je suis passionné par le développement web, le design graphique, la communication digitale
+          et les nouvelles technologies. Je recherche constamment de nouvelles opportunités pour
+          développer mes compétences professionnelles.
+        </p>
 
-        <div class="skill">
-          <div class="skill-header">
-            <h4>PHP</h4>
-            <h4>80%</h4>
+        <div class="apropos-stats">
+          <div class="stat-card">
+            <span class="stat-number" data-count="3">0</span><span class="stat-plus">+</span>
+            <p>Stages</p>
           </div>
-
-          <div class="progress">
-            <span data-width="80%"></span>
+          <div class="stat-card">
+            <span class="stat-number" data-count="15">0</span><span class="stat-plus">+</span>
+            <p>Projets</p>
           </div>
-        </div>
-
-        <div class="skill">
-          <div class="skill-header">
-            <h4>WordPress</h4>
-            <h4>70%</h4>
-          </div>
-
-          <div class="progress">
-            <span data-width="70%"></span>
-          </div>
-        </div>
-
-        <div class="skill">
-          <div class="skill-header">
-            <h4>SEO</h4>
-            <h4>75%</h4>
-          </div>
-
-          <div class="progress">
-            <span data-width="75%"></span>
+          <div class="stat-card">
+            <span class="stat-number" data-count="5">0</span><span class="stat-plus">+</span>
+            <p>Compétences</p>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
 
+<!-- ============================================ -->
+<!-- COMPÉTENCES                                   -->
+<!-- ============================================ -->
+<section class="section competences alt-bg" id="competences">
+  <div class="container">
+
+    <div class="section-head" data-aos="fade-up">
+      <p class="section-eyebrow">Mon savoir-faire</p>
+      <h2 class="section-title">Compétences</h2>
+    </div>
+
+    <div class="skills-grid">
+
+      <div class="skill-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="skill-top">
+          <i class="fa-brands fa-html5"></i>
+          <span>HTML</span>
+        </div>
+        <div class="skill-bar"><span class="skill-fill" data-percent="70"></span></div>
+      </div>
+
+      <div class="skill-card" data-aos="fade-up" data-aos-delay="50">
+        <div class="skill-top">
+          <i class="fa-brands fa-css3-alt"></i>
+          <span>CSS</span>
+        </div>
+        <div class="skill-bar"><span class="skill-fill" data-percent="60"></span></div>
+      </div>
+
+      <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="skill-top">
+          <i class="fa-brands fa-js"></i>
+          <span>JavaScript</span>
+        </div>
+        <div class="skill-bar"><span class="skill-fill" data-percent="50"></span></div>
+      </div>
+
+      <div class="skill-card" data-aos="fade-up" data-aos-delay="150">
+        <div class="skill-top">
+          <i class="fa-solid fa-palette"></i>
+          <span>Design Graphique</span>
+        </div>
+        <div class="skill-bar"><span class="skill-fill" data-percent="80"></span></div>
+      </div>
+
+      <div class="skill-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="skill-top">
+          <i class="fa-solid fa-cube"></i>
+          <span>Modélisation 3D</span>
+        </div>
+        <div class="skill-bar"><span class="skill-fill" data-percent="50"></span></div>
+      </div>
+
+      <div class="skill-card" data-aos="fade-up" data-aos-delay="250">
+        <div class="skill-top">
+          <i class="fa-solid fa-headphones"></i>
+          <span>Technicien Sonore</span>
+        </div>
+        <div class="skill-bar"><span class="skill-fill" data-percent="60"></span></div>
       </div>
 
     </div>
+  </div>
+</section>
 
-  </section>
+<!-- ============================================ -->
+<!-- DIPLÔMES OBTENUS - TIMELINE VERTICALE         -->
+<!-- ============================================ -->
+<section class="section diplomes" id="diplomes">
+  <div class="container">
 
-  <!-- FOOTER -->
+    <div class="section-head" data-aos="fade-up">
+      <p class="section-eyebrow">Mon parcours académique</p>
+      <h2 class="section-title">Diplômes obtenus</h2>
+    </div>
 
-  <footer>
-    © 2026 - Portfolio Moderne | Design inspiré du modèle
-  </footer>
+    <div class="timeline">
 
-  <!-- JS -->
+      <div class="timeline-item" data-aos="fade-up">
+        <div class="timeline-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+        <div class="timeline-content">
+          <span class="timeline-year">2025</span>
+          <h3>Licence en Communication Multimédia</h3>
+          <p>Université de Fianarantsoa- Ecole de Management et d'Innovation technologiques</p>
+        </div>
+      </div>
 
-  <script>
+      <div class="timeline-item" data-aos="fade-up">
+        <div class="timeline-icon"><i class="fa-solid fa-award"></i></div>
+        <div class="timeline-content">
+          <span class="timeline-year">2021</span>
+          <h3>Baccalauréat Série C</h3>
+          <p>Lycée Saint Joseph de Cluny Tambohobe Fianarantsoa</p>
+        </div>
+      </div>
 
-    // Animation barres de compétences
+      <div class="timeline-item" data-aos="fade-up">
+        <div class="timeline-icon"><i class="fa-solid fa-certificate"></i></div>
+        <div class="timeline-content">
+          <span class="timeline-year">2014</span>
+          <h3>Diplôme d'Étude de la Langue Française (DELF A1)</h3>
+          <p>Alliance Francaise Antananarivo</p>
+        </div>
+      </div>
 
-    const spans = document.querySelectorAll(".progress span");
+    </div>
+  </div>
+</section>
 
-    window.addEventListener("scroll", ()=>{
+<!-- ============================================ -->
+<!-- FORMATION - TIMELINE ÉLÉGANTE                 -->
+<!-- ============================================ -->
+<section class="section formation alt-bg" id="formation">
+  <div class="container">
 
-      spans.forEach((span)=>{
+    <div class="section-head" data-aos="fade-up">
+      <p class="section-eyebrow">Développement personnel</p>
+      <h2 class="section-title">Formation</h2>
+    </div>
 
-        const position = span.getBoundingClientRect().top;
+    <div class="timeline timeline-alt">
 
-        const screen = window.innerHeight;
+      <div class="timeline-item" data-aos="fade-up">
+        <div class="timeline-icon"><i class="fa-solid fa-people-group"></i></div>
+        <div class="timeline-content">
+          <span class="timeline-year">2023</span>
+          <h3>Formation du Premier Degré de Chef d'Unité</h3>
+          <p>Tily Eto Madagasikara — Faritany Matsiatra Ambony</p>
+        </div>
+      </div>
 
-        if(position < screen){
-          span.style.width = span.dataset.width;
-        }
+      <div class="timeline-item" data-aos="fade-up">
+        <div class="timeline-icon"><i class="fa-solid fa-users-gear"></i></div>
+        <div class="timeline-content">
+          <span class="timeline-year">2024</span>
+          <h3>Formation du Second Degré de Chef d'Unité</h3>
+          <p>Tily Eto Madagasikara — Faritany Matsiatra Ambony</p>
+        </div>
+      </div>
 
-      });
+    </div>
+  </div>
+</section>
 
-    });
+<!-- ============================================ -->
+<!-- EXPÉRIENCES PROFESSIONNELLES                  -->
+<!-- ============================================ -->
+<section class="section experiences" id="experiences">
+  <div class="container">
 
-  </script>
+    <div class="section-head" data-aos="fade-up">
+      <p class="section-eyebrow">Sur le terrain</p>
+      <h2 class="section-title">Expériences professionnelles</h2>
+    </div>
 
+    <div class="exp-grid">
+
+      <div class="exp-card" data-aos="fade-up">
+        <div class="exp-icon"><i class="fa-solid fa-microphone-lines"></i></div>
+        <span class="exp-year">2025</span>
+        <h3>Stage de Conception d'un Spot Publicitaire Audio</h3>
+        <p class="exp-org">FOIBE LOTERANA MOMBA NY FIFANDRAISANA</p>
+        <p class="exp-sub">Radio Feon'ny Filazantsara Antsirabe</p>
+      </div>
+
+      <div class="exp-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="exp-icon"><i class="fa-solid fa-database"></i></div>
+        <span class="exp-year">2024</span>
+        <h3>Stage de Modélisation et Conception de Base de Données</h3>
+        <p class="exp-org">Fiangonana Loterana Malagasy Toby Fanantenana 67Ha</p>
+        <p class="exp-sub">Sampana Vokovokomanga</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- PROJETS                                       -->
+<!-- ============================================ -->
+<section class="section projets alt-bg" id="projets">
+  <div class="container">
+
+    <div class="section-head" data-aos="fade-up">
+      <p class="section-eyebrow">Mes réalisations</p>
+      <h2 class="section-title">Projets</h2>
+    </div>
+
+    <!-- Filtres de la galerie de projets -->
+    <div class="projets-filter" data-aos="fade-up">
+      <button class="filter-btn active" data-filter="all">Tous</button>
+      <button class="filter-btn" data-filter="design">Design</button>
+      <button class="filter-btn" data-filter="audio">Audio</button>
+      <button class="filter-btn" data-filter="photo">Galerie Photo</button>
+    </div>
+
+    <div class="projets-grid">
+
+      <!-- Projet Design -->
+      <div class="projet-card" data-category="design" data-aos="fade-up">
+        <div class="projet-image lightbox-trigger">
+          <img src="FITO 17 Jolay 2026.png" alt="Projet ">
+          <div class="projet-zoom"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+        </div>
+        <div class="projet-info">
+          <h3>Design Graphique</h3>
+          <p>Présentation des Totemisé s chez Tily eto Madagasikara Faritany Matsiatra Ambony</p>
+          <div class="projet-links">
+            <button type="button" class="btn-small btn-view">Voir</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Catégorie Audio 1 -->
+      <div class="projet-card audio-card" data-category="audio" data-aos="fade-up" data-aos-delay="150">
+        <div class="projet-image">
+          <img src="LOGO FLF .png" alt="Projet audio 1">
+        </div>
+        <div class="projet-info">
+          <h3>Spot Publicitaire Audio</h3>
+          <p>Conception et montage d'un spot publicitaire radiophonique.</p>
+          <audio controls>
+            <source src="15-SPOT FORMATION FLF (Prime time).mp3" type="audio/mpeg">
+            Votre navigateur ne supporte pas la lecture audio.
+          </audio>
+        </div>
+      </div>
+
+      <!-- Catégorie Audio 2 -->
+      <div class="projet-card audio-card" data-category="audio" data-aos="fade-up" data-aos-delay="200">
+        <div class="projet-image">
+          <img src="Logo VLM 67ha.png" alt="Projet audio 2">
+        </div>
+        <div class="projet-info">
+          <h3>Prise de son d'un choral</h3>
+          <p>Mixage et montage d'un prise de son d'une chanson d'un choral.</p>
+          <audio controls>
+            <source src="FAHARIANA VAOVAO.mp3" type="audio/mpeg">
+            Votre navigateur ne supporte pas la lecture audio.
+          </audio>
+        </div>
+      </div>
+
+      <!-- Galerie Photo - Masonry -->
+      <div class="projet-card photo-card masonry-item" data-category="photo" data-aos="fade-up" data-aos-delay="250">
+        <div class="projet-image lightbox-trigger">
+          <img src="WhatsApp Image 2025-09-16 à 19.56.22_d0406194.jpg" alt="Photo galerie 1">
+          <div class="projet-zoom"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+        </div>
+      </div>
+
+      <div class="projet-card photo-card masonry-item" data-category="photo" data-aos="fade-up" data-aos-delay="300">
+        <div class="projet-image lightbox-trigger">
+          <img src="WhatsApp Image 2025-09-16 à 19.56.23_e242c435.jpg" alt="Photo galerie 2">
+          <div class="projet-zoom"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+        </div>
+      </div>
+
+      <div class="projet-card photo-card masonry-item" data-category="photo" data-aos="fade-up" data-aos-delay="350">
+        <div class="projet-image lightbox-trigger">
+          <img src="WhatsApp Image 2025-09-16 à 19.56.57_43ac8c66.jpg" alt="Photo galerie 3">
+          <div class="projet-zoom"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox plein écran (Projets) -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Fermer">
+    <i class="fa-solid fa-xmark"></i>
+  </button>
+  <img src="" alt="" id="lightboxImg">
+</div>
+
+<!-- ============================================ -->
+<!-- CONTACT                                       -->
+<!-- ============================================ -->
+<section class="section contact alt-bg" id="contact">
+  <div class="container">
+
+    <div class="section-head" data-aos="fade-up">
+      <p class="section-eyebrow">Discutons ensemble</p>
+      <h2 class="section-title">Contact</h2>
+    </div>
+
+    <div class="contact-card" data-aos="fade-up">
+
+      <form class="contact-form" id="contactForm">
+        <div class="form-group">
+          <input type="text" id="cName" name="name" placeholder=" " required>
+          <label for="cName">Nom</label>
+        </div>
+        <div class="form-group">
+          <input type="email" id="cEmail" name="email" placeholder=" " required>
+          <label for="cEmail">Email</label>
+        </div>
+        <div class="form-group">
+          <input type="text" id="cSubject" name="subject" placeholder=" " required>
+          <label for="cSubject">Sujet</label>
+        </div>
+        <div class="form-group">
+          <textarea id="cMessage" name="message" rows="5" placeholder=" " required></textarea>
+          <label for="cMessage">Message</label>
+        </div>
+        <button type="submit" class="btn btn-primary">
+          <i class="fa-solid fa-paper-plane"></i> Envoyer
+          <span class="btn-loader"></span>
+        </button>
+        <p class="form-success" id="formSuccess">Votre message a été envoyé avec succès !</p>
+      </form>
+
+      <div class="contact-info">
+        <a href="tel:+261349657714" class="contact-item">
+          <i class="fa-solid fa-phone"></i>
+          <span>+261 34 96 577 14</span>
+        </a>
+        <a href="mailto:minohenintsoarabearison@gmail.com" class="contact-item">
+          <i class="fa-solid fa-envelope"></i>
+          <span>minohenintsoarabearison@gmail.com</span>
+        </a>
+        <a href="https://www.linkedin.com/in/minohenintsoa-rabearison-971005304/" class="contact-item">
+          <i class="fa-brands fa-linkedin"></i>
+          <span>LinkedIn</span>
+        </a>
+        <a href="https://web.facebook.com/kitrio.milamina" class="contact-item">
+          <i class="fa-brands fa-facebook"></i>
+          <span>Facebook</span>
+        </a>
+        <a href="#" class="contact-item">
+          <i class="fa-brands fa-github"></i>
+          <span>GitHub</span>
+        </a>
+
+        <div class="contact-map">
+          <iframe
+            src="https://www.google.com/maps?q=Fianarantsoa,Madagascar&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Localisation Google Maps">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- FOOTER                                        -->
+<!-- ============================================ -->
+<footer class="footer">
+  <div class="container footer-container">
+    <a href="#accueil" class="footer-logo">RABEARISON</a>
+
+    <div class="footer-socials">
+      <a href="https://www.linkedin.com/in/minohenintsoa-rabearison-971005304/" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="https://web.facebook.com/kitrio.milamina" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+      <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+      <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+    </div>
+
+    <p class="footer-copy">&copy; <span id="year"></span> KITRIO Milamina. Tous droits réservés.</p>
+  </div>
+
+  <button class="back-to-top" id="backToTop" aria-label="Retour en haut">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+</footer>
+
+<!-- Script principal -->
+<script src="script.js"></script>
 </body>
 </html>
